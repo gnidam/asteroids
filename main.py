@@ -29,7 +29,7 @@ def main():
     Shot.containers = (shots, updatable, drawable)
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    asteroidfield = AsteroidField()
+    asteroid_field = AsteroidField()
 
     dt = 0
 
@@ -52,7 +52,8 @@ def main():
                 if s.collides_with(a):
                     log_event("asteroid_shot")
                     s.kill()
-                    a.kill()
+                    #a.kill()
+                    a.split()
 
         screen.fill("black")
         
